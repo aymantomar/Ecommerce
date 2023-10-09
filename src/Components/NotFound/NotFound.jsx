@@ -5,7 +5,7 @@ function NotFound() {
     <>
       <div className="row">
         <div className="col-md-12 text-center">
-          <img src={notFound} alt="not found image" />
+          <img src={notFound} alt="not found image" className="img-fluid" />
         </div>
       </div>
     </>

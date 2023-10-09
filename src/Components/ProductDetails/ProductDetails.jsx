@@ -85,7 +85,7 @@ function ProductDetails() {
                   onClick={() => getCart(productDetails.data.id)}
                   className="my-3 btn bg-main text-white w-100"
                 >
-                  add to cart
+                  <i class="fa-solid fa-cart-plus"></i> add to cart
                 </button>
               </div>
             </>

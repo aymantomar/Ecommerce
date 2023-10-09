@@ -37,8 +37,14 @@ function Allorders() {
                   : "bg-light p-3 border-left-visa"
               }
             >
-              <div className="d-flex justify-content-between border-bottom pb-3 mb-3">
-                <div className="fw-bold text-main text-capitalize">
+              <div className="row justify-content-between border-bottom pb-3 mb-3">
+                <div
+                  className={
+                    order.paymentMethodType === "cash"
+                      ? "fw-bold text-main text-capitalize col-12 col-md-4 mb-3 mb-md-0"
+                      : "fw-bold text-visa text-capitalize col-12 col-md-4 mb-3 mb-md-0"
+                  }
+                >
                   {" "}
                   <i
                     className={
@@ -49,13 +55,21 @@ function Allorders() {
                   ></i>{" "}
                   Delivery Status : your order is not deliverd yet !
                 </div>
-                <div className="fw-bold text-main">
+                <div
+                  className={
+                    order.paymentMethodType === "cash"
+                      ? "fw-bold text-main text-capitalize col-12 col-md-4 mb-3 mb-md-0 text-center"
+                      : "fw-bold text-visa text-capitalize col-12 col-md-4 mb-3 mb-md-0 text-center"
+                  }
+                  id="cartUser"
+                >
                   <i
                     className={
                       order.paymentMethodType === "cash"
-                        ? "fa-regular fa-calendar-days text-main"
-                        : "fa-regular fa-calendar-days text-visa"
+                        ? "fa-regular fa-calendar-days text-main text-center"
+                        : "fa-regular fa-calendar-days text-visa text-center"
                     }
+                    id="cartUser"
                   ></i>{" "}
                   Order Data :{" "}
                   {order.createdAt
@@ -65,14 +79,20 @@ function Allorders() {
                       )
                     : ""}
                 </div>
-                <div className="fw-bold text-main text-capitalize">
-                  {" "}
-                  Payment method : {order.paymentMethodType}{" "}
+                <div
+                  className={
+                    order.paymentMethodType === "cash"
+                      ? "fw-bold text-main text-capitalize col-12 col-md-4 mb-3 mb-md-0 text-end"
+                      : "fw-bold text-visa text-capitalize col-12 col-md-4 mb-3 mb-md-0 text-end"
+                  }
+                  id="cartUser"
+                >
                   {order.paymentMethodType === "cash" ? (
                     <i className="fa-solid fa-money-bill text-main"></i>
                   ) : (
                     <i className="fa-brands fa-cc-visa text-visa"></i>
-                  )}
+                  )}{" "}
+                  Payment method : {order.paymentMethodType}
                 </div>
               </div>
               <div className="row">
@@ -80,7 +100,13 @@ function Allorders() {
                   return (
                     <div className="col-md-3 mb-3" key={index}>
                       <div className="bg-white customShadow p-2 rounded-2 mb-1">
-                        <h6 className="text-center text-main">
+                        <h6
+                          className={
+                            order.paymentMethodType === "cash"
+                              ? "text-center text-main"
+                              : "text-center text-visa"
+                          }
+                        >
                           {item.product.title.split(" ").slice(0, 2).join("")}
                         </h6>
                         <div className="d-flex justify-content-evenly">
@@ -108,8 +134,8 @@ function Allorders() {
                 })}
               </div>
               <div className="pt-3 border-top mt-5">
-                <div className="d-flex justify-content-between">
-                  <div className="fs-5">
+                <div className="row justify-content-between">
+                  <div className="col-12 col-md-3 h5 my-3">
                     {" "}
                     <span>Total Price:</span>{" "}
                     <span
@@ -122,7 +148,7 @@ function Allorders() {
                       {order.totalOrderPrice} EGP
                     </span>
                   </div>
-                  <div className="fs-5">
+                  <div className="h5 col-12 col-md-3 text-end" id="cartUser">
                     Username:{" "}
                     <span
                       className={

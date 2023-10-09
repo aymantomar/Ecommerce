@@ -6,6 +6,7 @@ import { passwordContext } from "../../Context/forgetPassword";
 import { FallingLines } from "react-loader-spinner";
 
 import { Navigate, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 function VerifyCode() {
   let { confirmVerifyCode } = useContext(passwordContext);
 
@@ -31,6 +32,9 @@ function VerifyCode() {
   });
   return (
     <>
+      <Helmet>
+        <title>Verify Code | FreshCart</title>
+      </Helmet>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="text">Verify code: </label>
         <input

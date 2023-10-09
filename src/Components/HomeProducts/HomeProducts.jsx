@@ -66,6 +66,9 @@ function HomeProducts() {
         </div>
       ) : (
         <div className="row my-3">
+          <h1 className="h4 my-3 text-capitalize">
+            <i class="fa-solid fa-truck-fast"></i> Top Selling
+          </h1>
           {data?.data.data.map((product) => {
             return (
               <div className="col-md-2" key={product._id}>

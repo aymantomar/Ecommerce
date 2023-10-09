@@ -68,7 +68,10 @@ function HomeCategory() {
         </div>
       ) : (
         <div className="row g-0 my-5 category">
-          <h1 className="h4 my-3 text-capitalize">shop popuolar Category</h1>
+          <h1 className="h4 my-3 text-capitalize">
+            <i class="fa-solid fa-table-cells text-main"></i> shop popuolar
+            Category
+          </h1>
           <Slider {...settings}>
             {category?.data.map((category) => {
               return (

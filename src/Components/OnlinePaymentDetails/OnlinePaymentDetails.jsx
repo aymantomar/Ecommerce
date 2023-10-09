@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { useContext } from "react";
 import { cartContext } from "../../Context/cart";
 import jwtDecode from "jwt-decode";
+import { Helmet } from "react-helmet";
 
 function OnlinePaymentDetails() {
   let { onlinePayment } = useContext(cartContext);
@@ -35,6 +36,9 @@ function OnlinePaymentDetails() {
   });
   return (
     <>
+      <Helmet>
+        <title>Online Payment Details | FreshCart</title>
+      </Helmet>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="details" className="text-capitalize">
           details:{" "}

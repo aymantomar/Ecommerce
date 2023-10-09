@@ -12,6 +12,7 @@ import { Circles, FallingLines } from "react-loader-spinner";
 import axios from "axios";
 import { loginContext } from "../../Context/loginContext";
 import { tokenContext } from "../../Context/tokenContext";
+import { Helmet } from "react-helmet";
 
 function Login() {
   const dispatch = useDispatch();
@@ -59,6 +60,9 @@ function Login() {
 
   return (
     <>
+      <Helmet>
+        <title>Login | FreshCart</title>
+      </Helmet>
       {isError ? <div className="alert alert-danger">{isError}</div> : ""}
 
       <form onSubmit={formik.handleSubmit}>

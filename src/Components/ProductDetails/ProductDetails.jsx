@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import { ThreeCircles } from "react-loader-spinner";
 import { addToCart, cartContext } from "../../Context/cart";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 function ProductDetails() {
   let { id } = useParams();
@@ -69,6 +70,9 @@ function ProductDetails() {
                 </Slider>
               </div>
               <div className="col-md-8">
+                <Helmet>
+                  <title>{productDetails?.data.title} | FreshCart</title>
+                </Helmet>
                 <h4>{productDetails?.data.title}</h4>
                 <h6 className="my-3">{productDetails?.data.description}</h6>
                 <h6 className="text-main my-3">

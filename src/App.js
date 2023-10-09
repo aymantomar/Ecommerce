@@ -40,7 +40,11 @@ function App() {
       children: [
         {
           index: true,
-          element: <Home />,
+          element: (
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "/Home",

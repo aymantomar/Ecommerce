@@ -1,11 +1,16 @@
 import jwtDecode from "jwt-decode";
 import style from "./Profile.module.css";
+import { Helmet } from "react-helmet";
 
 function Profile() {
   let decode = jwtDecode(localStorage.getItem("token"));
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Profile | FreshCart</title>
+      </Helmet>
       <div className="row">
         <div className="col-md-6 m-auto d-flex  p-5 justify-content-between align-items-center border border-1">
           <div>

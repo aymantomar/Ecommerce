@@ -11,11 +11,21 @@ function Layout() {
       setToken(localStorage.getItem("token"));
     }
   }, []);
+
+  function goUp() {
+    window.scrollTo(0, 0);
+  }
   return (
     <>
       <Navbar />
       <div className="container py-4">
         <Outlet />
+        <div
+          onClick={() => goUp()}
+          className="cursor-pointer d-flex align-items-center justify-content-center goTop position-fixed   bg-main text-light "
+        >
+          <i className="fa-solid fa-angle-up"></i>
+        </div>
       </div>
       <Footer />
     </>

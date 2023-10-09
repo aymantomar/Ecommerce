@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getCategory } from "../../Redux/CategoryReducer";
 import { ThreeCircles } from "react-loader-spinner";
+import { Helmet } from "react-helmet";
 
 function Category() {
   let { isLoading, isError, category } = useSelector((state) => state.category);
@@ -24,6 +25,10 @@ function Category() {
   };
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Category | FreshCart</title>
+      </Helmet>
       <div className="row">
         {category?.data.map((category, index) => {
           return (

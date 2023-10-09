@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 import { ThreeCircles } from "react-loader-spinner";
 import { getBrands } from "../../Redux/BrandsReducer";
+import { Helmet } from "react-helmet";
 
 function Brands() {
   let { isLoading, isError, brands } = useSelector((state) => state.brands);
@@ -26,6 +27,10 @@ function Brands() {
   };
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Brands | FreshCart</title>
+      </Helmet>
       {isLoading ? (
         <div className="loading d-flex align-content-center justify-content-center text-center w-100">
           <ThreeCircles

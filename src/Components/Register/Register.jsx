@@ -6,6 +6,7 @@ import { getRegisterData } from "../../Redux/RegisterReducer";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function Register() {
   const regPassword = /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$/;
@@ -54,6 +55,9 @@ function Register() {
 
   return (
     <>
+      <Helmet>
+        <title>Register | FreshCart</title>
+      </Helmet>
       <form onSubmit={formik.handleSubmit}>
         <label className="w-100 text-start" htmlFor="name">
           Name:

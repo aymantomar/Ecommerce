@@ -118,6 +118,29 @@ a:hover {
 .w-25.login {
   width: 100% !important;
 }
+* {
+  scroll-behavior: smooth !important;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #d0dcdd;
+}
+.goTop {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  z-index: 999;
+  right: 3rem;
+  bottom: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0aad0a;
+}
 
 @media (max-width: 575.98px) {
   .navbar-nav .border-1 {

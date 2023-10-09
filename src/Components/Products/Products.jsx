@@ -8,6 +8,7 @@ import { getProducts } from "../../Redux/ProductsReducer";
 import { cartContext } from "../../Context/cart";
 import toast from "react-hot-toast";
 import { wishlistContext } from "../../Context/wishlist";
+import { Helmet } from "react-helmet";
 
 function Products() {
   let { isLoading, products } = useSelector((state) => state.products);
@@ -42,6 +43,10 @@ function Products() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Products | FreshCart</title>
+      </Helmet>
       {isLoading ? (
         <div className="loading d-flex align-content-center justify-content-center text-center w-100">
           <ThreeCircles

@@ -4,6 +4,7 @@ import { wishlistContext } from "../../Context/wishlist";
 import { Link } from "react-router-dom";
 import { cartContext } from "../../Context/cart";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 function WishList() {
   let { wishCountControl, getUserWish, removeWishList } =
@@ -40,6 +41,9 @@ function WishList() {
 
   return (
     <>
+      <Helmet>
+        <title>Wish List | FreshCart</title>
+      </Helmet>
       <div className="row">
         {wishItems?.map((product) => {
           return (

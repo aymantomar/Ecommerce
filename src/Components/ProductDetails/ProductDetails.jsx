@@ -1,16 +1,18 @@
 import { useParams } from "react-router-dom";
 import style from "./ProductDetails.module.css";
-import { useContext } from "react";
+import { createContext, useContext } from "react";
 import { getproductDetailsData } from "../../Redux/ProductDetailsReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Slider from "react-slick";
 import { ThreeCircles } from "react-loader-spinner";
+import { addToCart, cartContext } from "../../Context/cart";
+import toast from "react-hot-toast";
 
 function ProductDetails() {
   let { id } = useParams();
   let dispatch = useDispatch();
-
+  let { countControl, addToCart } = useContext(cartContext);
   const settings = {
     arrows: false,
     autoplay: true,
@@ -20,6 +22,16 @@ function ProductDetails() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+  async function getCart(productId) {
+    let data = await addToCart(productId);
+    if (data?.status === "success") {
+      toast.success(data?.message);
+    } else {
+      toast.error(data?.message);
+    }
+    countControl(data.data.products.length);
+  }
 
   let { isLoading, productDetails } = useSelector(
     (state) => state.productDetails
@@ -71,7 +83,10 @@ function ProductDetails() {
                     <i className="fas fa-star rating-color"></i>
                   </h6>
                 </div>
-                <button className="my-3 btn bg-main text-white w-100">
+                <button
+                  onClick={() => getCart(productDetails.data.id)}
+                  className="my-3 btn bg-main text-white w-100"
+                >
                   add to cart
                 </button>
               </div>

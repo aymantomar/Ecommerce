@@ -26,11 +26,18 @@ function Category() {
   return (
     <>
       <div className="row">
-        {category?.data.map((category) => {
+        {category?.data.map((category, index) => {
           return (
-            <div className="col-md-2">
-              <img className="w-100" height={200} src={category.image} alt="" />
-              <h5>{category.name}</h5>
+            <div className="col-md-2" key={index}>
+              <div className="catItem mb-4 p-2">
+                <img
+                  className="w-100"
+                  height={200}
+                  src={category.image}
+                  alt=""
+                />
+                <h6 className="py-2 h6">{category.name}</h6>
+              </div>
             </div>
           );
         })}

@@ -89,3 +89,58 @@ a:hover {
 .customShadow {
   box-shadow: 0px 0px 9px 0px #7f8c8d;
 }
+
+.appSection {
+  text-align: right;
+}
+.footerPaymnet {
+  display: inline;
+}
+.catItem {
+  background-color: var(--main-color);
+  text-align: center;
+  color: #fff;
+  transition: 0.5s;
+}
+.catItem:hover {
+  background-color: #f2efef;
+  color: var(--main-color);
+}
+.navbar-nav .active {
+  color: var(--main-color) !important;
+  font-weight: bold;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+}
+.AuthIcon {
+  font-size: 10rem;
+}
+.w-25.login {
+  width: 100% !important;
+}
+
+@media (max-width: 575.98px) {
+  .navbar-nav .border-1 {
+    border: 0 !important;
+  }
+  .navbar-nav .top-0 {
+    top: 14px !important;
+  }
+  .appSection {
+    text-align: left;
+  }
+  .footerPaymnet {
+    display: block;
+  }
+  .appBtn {
+    display: block !important;
+    width: 100%;
+    margin-top: 10px;
+  }
+  #cartUser {
+    text-align: left !important;
+  }
+  .AuthIcon {
+    font-size: 5rem;
+  }
+}

@@ -43,11 +43,13 @@ function Brands() {
         </div>
       ) : (
         <div className="row">
-          {brands?.data.map((brand) => {
+          {brands?.data.map((brand, index) => {
             return (
-              <div className="col-md-2">
-                <img className="w-100" src={brand.image} alt="" />
-                <h5 className="text-center">{brand.name}</h5>
+              <div className="col-md-2" key={index}>
+                <div className="catItem mb-4 p-2">
+                  <img className="w-100" src={brand.image} alt="" />
+                  <h6 className="text-center py-2 h6">{brand.name}</h6>
+                </div>
               </div>
             );
           })}

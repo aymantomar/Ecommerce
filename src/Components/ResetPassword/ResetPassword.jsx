@@ -17,7 +17,6 @@ function ResetPassword() {
 
   async function handleSubmit(values) {
     let response = await resetPassword(values);
-    console.log(response);
   }
 
   let formik = useFormik({

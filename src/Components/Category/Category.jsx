@@ -13,7 +13,6 @@ function Category() {
   useEffect(() => {
     dispatch(getCategory());
   }, []);
-  console.log(category);
   const settings = {
     autoplay: true,
     dots: true,

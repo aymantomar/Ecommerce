@@ -32,7 +32,6 @@ let LoginReducer = createSlice({
     builder.addCase(getLoginData.fulfilled, (state, action) => {
       state.data = action.payload;
       state.isLoading = false;
-      console.log(state.isLoading);
     });
     builder.addCase(getLoginData.rejected, (state, action) => {
       //   state.data = action.payload;

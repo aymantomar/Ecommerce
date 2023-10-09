@@ -17,7 +17,6 @@ function VerifyCode() {
 
   async function handleSubmit(values) {
     let response = await confirmVerifyCode(values);
-    console.log(response);
     if (response.data.status === "Success") {
       navigate("/ResetPassword");
     }

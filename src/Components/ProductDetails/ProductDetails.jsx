@@ -40,7 +40,6 @@ function ProductDetails() {
     dispatch(getproductDetailsData(id));
   }, []);
 
-  console.log(productDetails);
   return (
     <>
       {isLoading ? (
@@ -62,7 +61,6 @@ function ProductDetails() {
         <div className="row d-flex align-items-center justify-content-center">
           {productDetails ? (
             <>
-              {console.log(productDetails)}
               <div className="col-md-4">
                 <Slider {...settings}>
                   {productDetails?.data.images.map((image, index) => {

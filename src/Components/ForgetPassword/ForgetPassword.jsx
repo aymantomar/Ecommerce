@@ -20,7 +20,6 @@ function ForgetPassword() {
     // setValues(values);
     let response = await sendVerificationCode(values);
 
-    // console.log(response);
     // setDataStatus(response.response.data);
 
     if (response.data.statusMsg === "success") {

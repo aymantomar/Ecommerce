@@ -31,48 +31,53 @@ function Footer() {
                 />
               </div>
               <div className="col-md-2 text-end">
-                <button type="submit" className="btn mb-3 bg-main text-white">
+                <button
+                  type="submit"
+                  className="btn mb-3 bg-main text-white appBtn"
+                >
                   share App Link
                 </button>
               </div>
             </form>
             <div className="col-12">
               <div className="border-top border-bottom py-4 mt-3">
-                <div className="d-flex justify-content-between">
-                  <div className="d-flex">
-                    <div className="align-items-center">
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="align-items-center col-md-12">
                       Payment Partner |
-                      <img
-                        className="mx-3 object-fit-contain"
-                        width={40}
-                        height={40}
-                        src={card}
-                        alt=""
-                      />
-                      <img
-                        className="mx-3 object-fit-contain"
-                        width={60}
-                        height={60}
-                        src={amazon}
-                        alt=""
-                      />
-                      <img
-                        className="mx-3 object-fit-contain"
-                        width={30}
-                        height={30}
-                        src={american}
-                        alt=""
-                      />
-                      <img
-                        className="mx-3 object-fit-contain"
-                        width={40}
-                        height={40}
-                        src={paypal}
-                        alt=""
-                      />
+                      <div className="footerPaymnet">
+                        <img
+                          className="mx-1 object-fit-contain"
+                          width={40}
+                          height={40}
+                          src={card}
+                          alt=""
+                        />
+                        <img
+                          className="mx-1 object-fit-contain"
+                          width={60}
+                          height={60}
+                          src={amazon}
+                          alt=""
+                        />
+                        <img
+                          className="mx-1 object-fit-contain"
+                          width={30}
+                          height={30}
+                          src={american}
+                          alt=""
+                        />
+                        <img
+                          className="mx-1 object-fit-contain"
+                          width={40}
+                          height={40}
+                          src={paypal}
+                          alt=""
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div>
+                  <div className="col-12 col-md-6 appSection mt-2">
                     Get deliveries with FreshCart{" "}
                     <img
                       width={200}

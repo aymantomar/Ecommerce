@@ -5,6 +5,7 @@ import { tokenContext } from "../../Context/tokenContext";
 import freshCartlogo from "../../Assests/images/freshcart-logo.svg";
 import { cartContext } from "../../Context/cart";
 import { wishlistContext } from "../../Context/wishlist";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   let { token, setToken } = useContext(tokenContext);
@@ -37,35 +38,66 @@ function Navbar() {
           <a className="navbar-brand" href="#">
             <img src={freshCartlogo} alt="logo image" />
           </a>
+          <button
+            className="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
           <div className="collapse navbar-collapse" id="collapsibleNavId">
             {token ? (
               <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                 <li className="nav-item">
-                  <Link to={"/Home"} className="nav-link">
+                  <NavLink to={""} className="nav-link">
                     Home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/Products"} className="nav-link">
+                  <NavLink
+                    to={"/Products"}
+                    className={({ isActive }) =>
+                      isActive ? "active nav-link" : "nav-link"
+                    }
+                  >
                     Products
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/Category"} className="nav-link">
+                  <NavLink
+                    to={"/Category"}
+                    className={({ isActive }) =>
+                      isActive ? "active nav-link" : "nav-link"
+                    }
+                  >
                     Category
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/Brands"} className="nav-link">
+                  <NavLink
+                    to={"/Brands"}
+                    className={({ isActive }) =>
+                      isActive ? "active nav-link" : "nav-link"
+                    }
+                  >
                     Brands
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <Link to={"/Profile"} className="nav-link">
+                  <NavLink
+                    to={"/Profile"}
+                    className={({ isActive }) =>
+                      isActive ? "active nav-link" : "nav-link"
+                    }
+                  >
                     Profile
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             ) : (
@@ -76,16 +108,18 @@ function Navbar() {
               {token ? (
                 <>
                   <li className="nav-item">
-                    <Link
+                    <NavLink
                       onClick={removeToken}
-                      className="nav-link"
+                      className={({ isActive }) =>
+                        isActive ? "active nav-link" : "nav-link"
+                      }
                       to={"/Login"}
                     >
                       Logout
-                    </Link>
+                    </NavLink>
                   </li>
 
-                  <li className="nav-item position-relative  mx-4 border border-1">
+                  <li className="nav-item position-relative mx-md-4 border border-1">
                     <Link className="nav-link" to={"/Cart"}>
                       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-main">
                         {productsLength}

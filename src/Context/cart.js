@@ -94,7 +94,6 @@ export default function CartProvider({ children }) {
         { count },
         { headers }
       );
-      console.log("iam context data", data);
       return data;
     } catch (error) {
       return error;
@@ -121,7 +120,6 @@ export default function CartProvider({ children }) {
         { shippingAddress: values },
         { headers }
       );
-      console.log(data);
       return data;
     } catch (error) {
       return error;

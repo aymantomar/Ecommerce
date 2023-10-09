@@ -24,7 +24,6 @@ function WishList() {
 
   async function removeFromWish(id) {
     let data = await removeWishList(id);
-    console.log(data.data.data.length);
     wishCountControl(data.data.data.length);
     getUserWishList();
     return data;

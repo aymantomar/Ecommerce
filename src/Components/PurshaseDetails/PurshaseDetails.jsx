@@ -20,7 +20,6 @@ function PurshaseDetails() {
 
   async function handleSubmit(values) {
     let data = await cashOnDelivery(values);
-    console.log("iam handle submit", data);
   }
 
   let formik = useFormik({

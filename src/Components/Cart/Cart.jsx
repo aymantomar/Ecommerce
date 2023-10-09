@@ -23,8 +23,6 @@ function Cart() {
 
   async function deleteUserData(productId) {
     let { data } = await deleteUserProduct(productId);
-    // console.log(data.data.products.length);
-    console.log();
     countControl(data.data.products.length);
 
     setCartProuct(data.data);
@@ -37,7 +35,6 @@ function Cart() {
     if (data.data.message === "success") {
       // setCartLength(0);
       setCartProuct(null);
-      console.log(cartProduct);
     }
   }
 
@@ -70,9 +67,9 @@ function Cart() {
             </button>
           </div>
           <div className=" mt-5 bg-light py-3">
-            {cartProduct?.products.map((product) => {
+            {cartProduct?.products.map((product, index) => {
               return (
-                <>
+                <div key={index}>
                   <div className="row" key={product?.product.id}>
                     <div className="col-md-1">
                       <img
@@ -124,7 +121,7 @@ function Cart() {
                       </div>
                     </div>
                   </div>
-                </>
+                </div>
               );
             })}
             <h6 className="border-bottom py-4">

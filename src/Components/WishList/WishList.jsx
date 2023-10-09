@@ -44,7 +44,7 @@ function WishList() {
         {wishItems?.map((product) => {
           return (
             <div className="col-md-2" key={product._id}>
-              <div className="product position-relative">
+              <div className="product position-relative p-2">
                 <div
                   onClick={() => removeFromWish(product._id)}
                   className="icon cursor-pointer me-3 my-3 position-absolute top-0 end-0"
@@ -73,7 +73,7 @@ function WishList() {
                   onClick={() => getCart(product._id)}
                   className="w-100 btn  bg-main text-light"
                 >
-                  add to cart
+                  <i class="fa-solid fa-cart-plus"></i> add to cart
                 </button>
               </div>
             </div>

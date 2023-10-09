@@ -23,7 +23,6 @@ function ForgetPassword() {
     // setDataStatus(response.response.data);
 
     if (response.data.statusMsg === "success") {
-      console.log("ggg");
       navigate("/VerifyCode");
     }
   }
@@ -51,7 +50,7 @@ function ForgetPassword() {
       )}
 
       <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="email">email: </label>
+        <label htmlFor="email">Email: </label>
         <input
           id="email"
           name="email"

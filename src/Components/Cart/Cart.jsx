@@ -23,6 +23,8 @@ function Cart() {
 
   async function deleteUserData(productId) {
     let { data } = await deleteUserProduct(productId);
+    // console.log(data.data.products.length);
+    console.log();
     countControl(data.data.products.length);
 
     setCartProuct(data.data);
@@ -35,6 +37,7 @@ function Cart() {
     if (data.data.message === "success") {
       // setCartLength(0);
       setCartProuct(null);
+      console.log(cartProduct);
     }
   }
 
@@ -66,11 +69,14 @@ function Cart() {
               Clear All
             </button>
           </div>
-          <div className=" mt-5 bg-light py-3">
-            {cartProduct?.products.map((product, index) => {
+          <div className=" mt-5 bg-light p-3">
+            {cartProduct?.products.map((product) => {
               return (
-                <div key={index}>
-                  <div className="row" key={product?.product.id}>
+                <>
+                  <div
+                    className="row border-bottom pb-3 mb-3"
+                    key={product?.product.id}
+                  >
                     <div className="col-md-1">
                       <img
                         className="w-100"
@@ -78,15 +84,15 @@ function Cart() {
                         alt="product "
                       />
                     </div>
-                    <div className="col-md-11 mb-4 d-flex justify-content-between">
+                    <div className="col-md-11 mb-4 mt-3 d-flex justify-content-between">
                       <div className="details">
-                        <h4>
+                        <h4 className="h6">
                           {product.product.title
                             .split(" ")
                             .slice(0, 2)
                             .join(" ")}
                         </h4>
-                        <h5 className="text-main">{product.price} EGP</h5>
+                        <h5 className="text-main h6">{product.price} EGP</h5>
                         <span
                           className="cursor-pointer"
                           onClick={() => deleteUserData(product.product.id)}
@@ -94,7 +100,7 @@ function Cart() {
                           <i className="text-main fa-solid fa-trash"></i> Remove
                         </span>
                       </div>
-                      <div>
+                      <div className="mt-3">
                         <button
                           onClick={() =>
                             quantityControl(
@@ -102,7 +108,7 @@ function Cart() {
                               product.count + 1
                             )
                           }
-                          className="border border-1"
+                          className="border border-1 bg-main text-white px-2 rounded-2"
                         >
                           +
                         </button>
@@ -114,14 +120,14 @@ function Cart() {
                               product.count - 1
                             )
                           }
-                          className="border border-1"
+                          className="border border-1 bg-main text-white px-2 rounded-2"
                         >
                           -
                         </button>
                       </div>
                     </div>
                   </div>
-                </div>
+                </>
               );
             })}
             <h6 className="border-bottom py-4">
@@ -129,14 +135,17 @@ function Cart() {
               <i className="fa-solid fa-cart-shopping text-success"></i> Payment
               Method
             </h6>
-            <div className="d-flex justify-content-between pt-3">
+            <div className="row pt-3 justify-content-between px-3">
               <Link
                 to={"/OnlinePaymentDetails"}
-                className="btn bg-main text-light"
+                className="btn bg-main text-light col-12 col-md-2 mb-4 mb-md-0"
               >
                 <i className="fa-brands fa-cc-visa"></i> Checkout Online
               </Link>
-              <Link to={"/PurshaseDetails"} className="btn bg-main text-white">
+              <Link
+                to={"/PurshaseDetails"}
+                className="btn bg-main text-white col-12 col-md-2"
+              >
                 {" "}
                 <i className="fa-solid fa-money-bill"></i> Cash on Devilry
               </Link>

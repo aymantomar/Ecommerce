@@ -20,7 +20,7 @@ function HomeSlider() {
   return (
     <>
       <div className="row g-0">
-        <div className="col-md-10">
+        <div className="col-md-10 mb-5 mb-md-0">
           <Slider {...settings}>
             <img
               height={400}

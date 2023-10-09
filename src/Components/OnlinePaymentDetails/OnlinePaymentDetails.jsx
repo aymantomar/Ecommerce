@@ -36,11 +36,13 @@ function OnlinePaymentDetails() {
   return (
     <>
       <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="details">details: </label>
+        <label htmlFor="details" className="text-capitalize">
+          details:{" "}
+        </label>
         <input
-          className="form-control mb-3"
+          className="form-control my-3"
           type="text"
-          placeholder="details"
+          placeholder="Details"
           name="details"
           id="details"
           onChange={formik.handleChange}
@@ -53,11 +55,13 @@ function OnlinePaymentDetails() {
           ""
         )}
 
-        <label htmlFor="phone">phone: </label>
+        <label className="text-capitalize" htmlFor="phone">
+          phone:{" "}
+        </label>
         <input
-          className="form-control mb-3"
+          className="form-control my-3"
           type="text"
-          placeholder="enter your phone"
+          placeholder="Enter your phone"
           name="phone"
           id="phone"
           onChange={formik.handleChange}
@@ -69,11 +73,13 @@ function OnlinePaymentDetails() {
         ) : (
           ""
         )}
-        <label htmlFor="city">city: </label>
+        <label htmlFor="city" className="text-capitalize">
+          city:{" "}
+        </label>
         <input
-          className="form-control mb-3"
+          className="form-control my-3"
           type="text"
-          placeholder="enter your city"
+          placeholder="Enter your city"
           name="city"
           id="city"
           onChange={formik.handleChange}

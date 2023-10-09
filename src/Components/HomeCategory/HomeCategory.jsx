@@ -22,6 +22,32 @@ function HomeCategory() {
     slidesToShow: 7,
     slidesToScroll: 7,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
   return (
     <>
@@ -41,20 +67,20 @@ function HomeCategory() {
           />
         </div>
       ) : (
-        <div className="row g-0 my-5">
-          <h1>shop popuolar Category</h1>
+        <div className="row g-0 my-5 category">
+          <h1 className="h4 my-3 text-capitalize">shop popuolar Category</h1>
           <Slider {...settings}>
             {category?.data.map((category) => {
               return (
                 <div className="col-md-2" key={category._id}>
                   <div className="category">
                     <img
-                      className="w-100"
-                      height={200}
+                      className="w-100 rounded-circle border border-4 my-2"
+                      height={180}
                       src={category.image}
                       alt={category.name}
                     />
-                    <h5 className="h6 my-2">{category.name}</h5>
+                    <h5 className="h6 my-2 text-center">{category.name}</h5>
                   </div>
                 </div>
               );

@@ -9,7 +9,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 function Register() {
-  const regPassword = /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$/;
+  const regPassword =
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
   const regPhone = /^01[0125][0-9]{8}$/gi;
   const dispatch = useDispatch();
 
@@ -25,7 +26,7 @@ function Register() {
     password: Yup.string()
       .matches(
         regPassword,
-        "must contains 1 number and 1 character ...maximum 6 characters"
+        "Minimum eight characters, at least one letter, one number and one special character"
       )
       .required("pls enter valid password"),
     rePassword: Yup.string()

@@ -125,15 +125,11 @@ function Navbar() {
                           <i className="fa-solid fa-address-card"></i> Profile
                         </Link>
                       </li>
-                      <li className="nav-item">
-                        <Link className="nav-link h6" to="/WishList">
-                          <i className="fa-solid fa-heart"></i> Wishlist
-                        </Link>
-                      </li>
+
                       <li className="nav-item">
                         <Link className="nav-link h6" to="allorders">
-                          <i className="fa-solid fa-basket-shopping"></i> My
-                          Orders
+                          <i className="fa-solid fa-basket-shopping"></i> Order
+                          history
                         </Link>
                       </li>
                       <li className="nav-item">
@@ -147,6 +143,22 @@ function Navbar() {
                       </li>
                     </ul>
                   </div>
+                  <li className="nav-item position-relative mx-md-4 border border-1">
+                    <Link className="nav-link" to={"/Cart"}>
+                      <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-main">
+                        {productsLength}
+                      </span>
+                      <i className=" fa-solid fa-cart-shopping"></i>
+                    </Link>
+                  </li>
+                  <li className="nav-item border position-relative border-1 ">
+                    <Link className="nav-link" to={"/Wishlist"}>
+                      <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-main">
+                        {wishQuantity}
+                      </span>
+                      <i className="fa-solid fa-heart"></i>
+                    </Link>
+                  </li>
                 </>
               ) : (
                 <>

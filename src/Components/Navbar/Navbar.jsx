@@ -89,7 +89,7 @@ function Navbar() {
                   </NavLink>
                 </li>
 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <NavLink
                     to={"/Profile"}
                     className={({ isActive }) =>
@@ -98,13 +98,82 @@ function Navbar() {
                   >
                     Profile
                   </NavLink>
-                </li>
+                </li> */}
               </ul>
             ) : (
               ""
             )}
 
             <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
+              {token ? (
+                <>
+                  <div className="dropdown">
+                    <Link
+                      className="btn bg-main border-0 btn-secondary dropdown-toggle text-white"
+                      to="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i className="fa-regular fa-circle-user text-main text-white"></i>{" "}
+                      Welcome User
+                    </Link>
+
+                    <ul className="dropdown-menu p-2 small">
+                      <li className="nav-item">
+                        <Link className="nav-link h6" to="/Profile">
+                          <i className="fa-solid fa-address-card"></i> Profile
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link h6" to="/WishList">
+                          <i className="fa-solid fa-heart"></i> Wishlist
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link h6" to="allorders">
+                          <i className="fa-solid fa-basket-shopping"></i> My
+                          Orders
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <button
+                          onClick={() => removeToken()}
+                          className="nav-link h6 pointer-event"
+                        >
+                          <i className="fa-solid fa-right-from-bracket"></i>{" "}
+                          Logout
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/Login">
+                      Login
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/Register">
+                      Register
+                    </Link>
+                  </li>
+                </>
+              )}
+
+              {/* <li className="nav-item">
+                <button
+                  className="btn btn-danger rounded-5"
+                  onClick={() => setCounter(counter + 1)}
+                >
+                  +
+                </button>
+              </li> */}
+            </ul>
+
+            {/* <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
               {token ? (
                 <>
                   <li className="nav-item">
@@ -151,7 +220,7 @@ function Navbar() {
                   </li>
                 </>
               )}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </nav>

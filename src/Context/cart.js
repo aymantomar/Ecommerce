@@ -116,9 +116,14 @@ export default function CartProvider({ children }) {
   async function onlinePayment(values) {
     try {
       let data = await axios.post(
-        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://aymantomar.github.io/Ecommerce`,
+        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}`,
         { shippingAddress: values },
-        { headers }
+        {
+          headers,
+          params: {
+            url: "https://aymantomar.github.io/Ecommerce/#",
+          },
+        }
       );
       return data;
     } catch (error) {
